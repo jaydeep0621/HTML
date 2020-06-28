@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Armstrong Number</title>
+</head>
+
+<body>
+	<center>
+		<h4> Find Amrstrong Number </h4>
+		<form>
+			<input style="box-shadow:20px" type="number" placeholder="Enter the Number" id="arm"/>
+			<input type="button" value="Check" id="btn"/>
+		</form>
+		<marquee>
+		<p id="text"> Work </p>
+		</marquee>
+	</center>
+	<script type="text/javascript">
+		function armstrong()
+		{
+			var number = document.getElementById("arm").value;
+			if(number == ""){
+				window.alert("Please Enter Valid Number");
+				return;
+			}
+			else if(number < 0){
+				window.alert("Number Must be Greater than 0 to Check for Armstong Number");
+				return;
+			}
+			var b,c,d=0;
+			for(i=number;i>0;i=parseInt(i/10)){
+				console.log("i",i);
+				b=i%10;
+				c=b*b*b;
+				d=d+c;
+			}
+			console.log("number",number);
+			console.log("d",d);
+			if(d==number){
+				document.getElementById("text").style.display = "block";
+				document.getElementById("text").innerHTML = "Yes " +number+ " is a Armstrong Number";
+			}
+			else{
+				document.getElementById("text").style.display = "block";
+				document.getElementById("text").innerHTML = "No " +number+ " is Not a Armstrong Number";
+			}
+		}
+		document.getElementById("text").style.display = "none";
+		document.getElementById("btn").onclick = function() {armstrong(); };
+	</script>
+</body>
+</html>

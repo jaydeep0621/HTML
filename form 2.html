@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> Palindrome Number</title>
+</head>
+<body>
+	<center>
+		<p>To Check a number is palindrome or not</p>
+		<form>
+			<input type="number" placeholder="Enter The Number" id="pali"/><br>
+			<input type="radio" name="option" id="armstrong" value="armstrong">
+			<label for="armstrong"> Armstrong Number</label><br>
+			<input type="radio" name="option" id="palindrome" value="palindrome">
+			<label for="armstrong"> Palindrome Number </label><br>
+			<input type="button" value="Check" id="btn"/><br>	
+		</form>
+	<p id="give">Number is</p>
+	</center>
+	<script>
+		function call(){
+			if(document.getElementById("armstrong"))
+			{
+			armstrong();
+		    }
+		    else if(document.getElementById("palindrome"))
+			{
+			console.log(document.getElementById("palindrome"));
+			palindrome();
+		    }
+		    }
+		function armstrong(){
+			var number = document.getElementById("pali").value;
+			if(number == 0 || number < 0)
+				alert("Number Should be Greater than 0");
+		    var a,b,c=0;
+			for(i=number;i>0;i=parseInt(i/10)){
+				a=i%10;
+				b=a*a*a;
+				c=c+b;
+			}
+			if(c==number){
+				document.getElementById("give").style.display="block";
+				document.getElementById("give").innerHTML = "Yes " +number+ " is a Armstrong Number";
+			}
+			else{
+				document.getElementById("give").style.display="block";
+				document.getElementById("give").innerHTML = "No " +number+ " is NOT a Armstrong Number";	
+			}
+			}
+		function palindrome(){
+			var number = document.getElementById("pali").value;
+			if(number == 0 || number < 0)
+				alert("Number Should Greater than 0");
+		    var a,b=0;
+			for(i=number;i>0;i=parseInt(i/10)){
+				a=i%10;
+				b=(b*10)+a;	
+			}
+			if(b=number){
+				document.getElementById("give").style.display="block";
+				document.getElementById("give").innerHTML = "Yes " +number+ " is a Palindrome Number";
+			}
+			else{
+				document.getElementById("give").style.display="block";
+				document.getElementById("give").innerHTML = "No " +number+ " is NOT a Palindrome Number";
+			}	
+		}
+		document.getElementById("give").style.display = "none";
+		document.getElementById("btn").onclick = function() {call(); }; 	
+	</script>
+</body>
+</html>

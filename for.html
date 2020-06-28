@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title> Loop</title>
+    </head>
+    <body>
+        <center>
+        <b>
+        <h1>Print Pattern</h1></b>
+        <form>
+            <input type="number" placeholder="Enter The Number" id = "val"/><br><br>
+            <input type="button" value="Print" id = "print"/>
+            <input type="reset" value = "Clear"/>
+        </form>
+        </center>
+        <script type="text/javascript">
+        function get(){
+            var number;
+            number = document.getElementById("val").value;
+            for(i=0;i<number;i++){
+            for(j=0;j<=i;j++){
+                console.log("Get Input");
+                document.write("*");
+              
+            }
+           document.write("</br >");
+        }
+        }
+        document.getElementById("print").onclick = function() {get(); };
+        </script>
+    </body>
+</html>

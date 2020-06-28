@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Palindrone Number</title>
+</head>
+
+<body>
+	<center>
+		<h1> To Check Number is Palindrome or Not </h1>
+	<form>
+		<input type="number" placeholder ="Enter The Text" id="palindrome"/>
+		<input type="button" value = "Search" id = "find"/>
+	</form>
+		<p id="new"> Number is </p>
+	</center>
+	<script type="text/javascript">
+		function palindrome(){
+			var a=document.getElementById("palindrome").value;
+			if(a == "" || a<0){
+				alert("Wrong Entry");
+			}
+			var b,c=0;
+			for(i=a;i>0;i=parseInt(i/10)){
+				b=i%10;
+				c=(c*10)+b;
+			}
+			if(c==a){
+				document.getElementById("new").style.display = "block";
+				document.getElementById("new").innerHTML = "Yes " +a+ " is a Palindrome Number";
+			}
+			else{
+				document.getElementById("new").style.display = "block";
+				document.getElementById("new").innerHTML = "No " +a+ " is Not a Palindrome Number";
+			}
+		}
+		document.getElementById("new").style.display = "none";
+		document.getElementById("find").onclick = function(){palindrome(); };
+	</script>
+</body>
+</html>
